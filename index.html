@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto Anime Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        #app {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #facts-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #facts-list li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Naruto Anime Facts</h1>
+        <ul id="facts-list"></ul>
+        <div class="button-container">
+            <button onclick="replaceFacts()">Replace Facts</button>
+        </div>
+    </div>
+    <script>
+        const facts = [
+            {
+                fact_number: 1,
+                title: "Creation",
+                description: "Naruto was created by Masashi Kishimoto and first appeared in Shueisha's Weekly Shōnen Jump magazine in 1999."
+            },
+            {
+                fact_number: 2,
+                title: "Inspiration",
+                description: "Kishimoto was inspired by Akira Toriyama's Dragon Ball series, which influenced the action and adventure elements in Naruto."
+            },
+            {
+                fact_number: 3,
+                title: "Length",
+                description: "The Naruto anime series is divided into two parts: 'Naruto,' which aired from 2002 to 2007, and 'Naruto: Shippuden,' which aired from 2007 to 2017."
+            },
+            {
+                fact_number: 4,
+                title: "Episodes",
+                description: "The original Naruto series has 220 episodes, while Naruto: Shippuden has 500 episodes, making a total of 720 episodes."
+            },
+            {
+                fact_number: 5,
+                title: "Spin-offs",
+                description: "The series has a sequel called 'Boruto: Naruto Next Generations,' which follows Naruto's son, Boruto Uzumaki."
+            },
+            {
+                fact_number: 6,
+                title: "Popularity",
+                description: "Naruto is one of the best-selling manga series in history, with over 250 million copies sold worldwide."
+            },
+            {
+                fact_number: 7,
+                title: "Cultural Impact",
+                description: "The series has had a significant cultural impact, influencing various media, including video games, films, and merchandise."
+            },
+            {
+                fact_number: 8,
+                title: "Character Development",
+                description: "Naruto Uzumaki, the protagonist, is known for his growth from a mischievous, lonely boy to a respected leader and hero."
+            },
+            {
+                fact_number: 9,
+                title: "Themes",
+                description: "The series explores themes of friendship, perseverance, and the importance of family and community."
+            },
+            {
+                fact_number: 10,
+                title: "Awards",
+                description: "Naruto has won numerous awards, including the Quill Award for Best Graphic Novel in 2006."
+            }
+        ];
+
+        const newFacts = [
+            {
+                fact_number: 11,
+                title: "Music",
+                description: "The Naruto series features a wide range of music, including opening and ending themes by popular Japanese artists."
+            },
+            {
+                fact_number: 12,
+                title: "Voice Acting",
+                description: "The voice actors for Naruto and other characters are well-known in the anime industry and have voiced characters in other popular series."
+            },
+            {
+                fact_number: 13,
+                title: "Merchandise",
+                description: "Naruto merchandise includes action figures, clothing, and accessories, making it a popular choice among fans."
+            },
+            {
+                fact_number: 14,
+                title: "Video Games",
+                description: "Numerous video games based on the Naruto series have been released, spanning various gaming platforms."
+            },
+            {
+                fact_number: 15,
+                title: "Live-Action Adaptation",
+                description: "There have been discussions about a live-action adaptation of Naruto, although it has not yet been produced."
+            }
+        ];
+
+        const factsList = document.getElementById('facts-list');
+
+        function displayFacts(factsArray) {
+            factsList.innerHTML = '';
+            factsArray.forEach(fact => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<strong>${fact.title}:</strong> ${fact.description}`;
+                factsList.appendChild(listItem);
+            });
+        }
+
+        function replaceFacts() {
+            displayFacts(newFacts);
+        }
+
+        // Initial display of facts
+        displayFacts(facts);
+    </script>
+</body>
+</html>
